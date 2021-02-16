@@ -33,7 +33,7 @@ public class ConsumerExample1 {
 	public static void main(String[] args) {
 
 		getAllStudents();	
-		System.out.println(" ");
+		System.out.println("  ");
 		getStudentsOfGrade3();
 	}
 
