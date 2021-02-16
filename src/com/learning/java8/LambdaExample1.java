@@ -10,7 +10,6 @@ public class LambdaExample1 {
 	public static void main(String[] args) {
 
 		List<Student> students = StudentDB.getStudents();
-		
 		students.forEach((student) -> System.out.println(student.toString()));
 	}
 
