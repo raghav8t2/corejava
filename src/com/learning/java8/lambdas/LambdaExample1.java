@@ -1,4 +1,4 @@
-package com.learning.java8;
+package com.learning.java8.lambdas;
 
 import java.util.List;
 

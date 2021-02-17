@@ -1,4 +1,4 @@
-package com.learning.java8;
+package com.learning.java8.functionalinterfaces;
 
 import java.util.List;
 import java.util.function.Consumer;
