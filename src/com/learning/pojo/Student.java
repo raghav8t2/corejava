@@ -8,6 +8,14 @@ public class Student {
 	double gpa;
 	List<String> activities;
 	
+	public Student(){
+		
+	}
+	
+	public Student(String name){
+		this.name = name;
+	}
+	
 	public Student(String name, int grade, double gpa, List<String> activities) {
 		this.name = name;
 		this.gpa = gpa;

@@ -1,4 +1,4 @@
-package com.learning.java8.functionalinterfaces;
+package com.learning.java8.methodreference;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -6,14 +6,26 @@ import java.util.function.Consumer;
 import com.learning.db.StudentDB;
 import com.learning.pojo.Student;
 
-public class ConsumerExample1 {
+public class MethodReferenceExample1 {
 
-	static Consumer<Student> student = (student) -> System.out.println(student.toString());
+	//static Consumer<Student> student = (student) -> System.out.println(student.toString());
+	//The above lambda can be written as method reference as below
+	static Consumer<Student> student = System.out::println;
 	
-	static Consumer<Student> studentsOfGrade3 = (student) -> {
+	
+	//if there is logic like below, then move the logic to a method and then use method reference
+	/* static Consumer<Student> studentsOfGrade3 = (student) -> {
 		if(student.getGrade() == 3)
 			System.out.println(student.toString());
-	};
+	};*/
+	
+	static Consumer<Student> studentsOfGrade3 = MethodReferenceExample1::printStudentsOfGrade3;
+	
+	static void printStudentsOfGrade3(Student s) {
+		if(s.getGrade() == 3)
+			System.out.println(s.toString());
+	}
+	
 	
 	
 	public static void getAllStudents() {
