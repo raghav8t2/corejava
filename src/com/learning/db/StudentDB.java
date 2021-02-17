@@ -9,7 +9,7 @@ public class StudentDB {
 
 	private static List<Student> students = Arrays.asList(
 			new Student("Arnold", 2, 3.4, Arrays.asList("Dancing", "Swimming", "Singing")),
-			new Student("David", 2, 3.9, Arrays.asList("Soccer", "Running")),
+			new Student("David", 2, 2.9, Arrays.asList("Soccer", "Running")),
 			
 			new Student("Beck", 3, 4.1, Arrays.asList("Writing", "Tennis")),
 			new Student("Ronaldo", 3, 2.9, Arrays.asList("Soccer", "Swimming", "Running")),

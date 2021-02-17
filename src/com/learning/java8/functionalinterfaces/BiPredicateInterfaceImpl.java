@@ -1,26 +1,27 @@
 package com.learning.java8.functionalinterfaces;
 
 import java.util.List;
+import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
 import com.learning.db.StudentDB;
 import com.learning.pojo.Student;
 
-public class PredicateInterfaceImpl {
+public class BiPredicateInterfaceImpl {
 
 	static List<Student> allStudents = StudentDB.getStudents();
 	
-	public static Predicate<Student> p1 = (student) -> {
-		return student.getGpa() >= 3;
+	static BiPredicate<Student, Integer> p1 = (student, gpa) -> {
+		return student.getGpa() >= gpa;
 	};
 	
-	public static Predicate<Student> p2 = (student) -> {
-		return student.getGrade() == 2;
+	static BiPredicate<Student, Integer> p2 = (student, grade) -> {
+		return student.getGrade() == grade;
 	};
 	
 	public static void getStudentsWithGpaAbove3() {
 		allStudents.forEach((s) -> {
-			if(p1.test(s)) {
+			if(p1.test(s, 3)) {
 				System.out.println(s.toString());
 			};
 		});
@@ -28,7 +29,7 @@ public class PredicateInterfaceImpl {
 	
 	public static void getStudentsOfGrade2AndGpaAbove3() {
 		allStudents.forEach((s) -> {
-			if(p1.and(p2).test(s)) {
+			if(p1.and(p2).test(s, 2)) {
 				System.out.println(s.toString());
 			};
 		});

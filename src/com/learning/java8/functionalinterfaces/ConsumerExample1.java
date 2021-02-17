@@ -8,7 +8,7 @@ import com.learning.pojo.Student;
 
 public class ConsumerExample1 {
 
-	static Consumer<Student> allStudents = (student) -> System.out.println(student.toString());
+	static Consumer<Student> student = (student) -> System.out.println(student.toString());
 	
 	static Consumer<Student> studentsOfGrade3 = (student) -> {
 		if(student.getGrade() == 3)
@@ -19,14 +19,14 @@ public class ConsumerExample1 {
 	public static void getAllStudents() {
 		System.out.println("*****All Students*****");
 		List<Student> students = StudentDB.getStudents();
-		students.forEach((student) -> allStudents.accept(student));
+		students.forEach(student);
 	
 	}
 
 	public static void getStudentsOfGrade3() {
 		System.out.println("*****Students Of Grade3*****");
 		List<Student> students = StudentDB.getStudents();
-		students.forEach((student) -> studentsOfGrade3.accept(student));
+		students.forEach(student);
 	
 	}
 	
